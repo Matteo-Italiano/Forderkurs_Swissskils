@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=https://schema.skills17.ch/task-config/v3/config.schema.json
+id: css-selectors
+metadata:
+  name: CSS Selectors
+  testsLink: http://localhost/work/htmlcss/css-selectors/test.html
+serve:
+  enabled: true
+localHistory: true
+source:
+- src/task.css
+groups:
+- match: CSS Selectors.+
+  displayName: CSS Selectors
+  tests:
+  - match: Task [1-4]
+    points: 0.5
+  - match: Task [5-6]
+    points: 0.75
+  - match: Task [7-9]
+    points: 1
+  - match: Task 10
+    points: 1.5

@@ -1,0 +1,9 @@
+{
+    "testFiles": "**/*.test.js",
+    "fixturesFolder": false,
+    "defaultCommandTimeout": 1000,
+    "video": false,
+    "screenshotOnRunFailure": false,
+    "viewportHeight": 900,
+    "viewportWidth": 1440
+}

@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=https://schema.skills17.ch/task-config/v3/config.schema.json
+id: landing-page
+metadata:
+  name: Landing Page
+localHistory: true
+groups:
+  - match: Hero.+
+    displayName: Hero
+    defaultPoints: 0.5
+  - match: Facts.+
+    displayName: Facts
+    defaultPoints: 0.5
+  - match: People.+
+    displayName: People
+    defaultPoints: 0.5
+  - match: Text.+
+    displayName: Text
+    defaultPoints: 0.5

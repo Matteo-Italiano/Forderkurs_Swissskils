@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=https://schema.skills17.ch/task-config/v3/config.schema.json
+id: frontend
+metadata:
+  name: Frontend
+localHistory: true
+groups:
+  - match: util .+
+    displayName: Util
+    tests:
+      - match: validate location > can throw errors on invalid locations.*
+        points: 0.5
+  - match: grid.+
+    displayName: Grid
+    tests:
+      - match: size of 10x10 > create legend >.*
+        points: 0.5
+      - match: size of 10x10 > create tiles > creates all tiles while constructing grid and appends them to the DOM
+        points: 0.5
+      - match: size of 10x10 > create tiles >.*
+        points: 0.25
+      - match: size of 10x10 > create grid >.*
+        points: 0.5
+      - match: size of 10x10 > can find the correct tile for an? (uppercase|lowercase) location >.*
+        points: 0.1
+      - match: size of 10x10 > will throw useful errors while trying to find tiles >.*
+        points: 0.25
+      - match: size of 10x10 > enable/disable the grid >.*
+        points: 0.25
+      - match: size of 10x10 > mark tiles >.*
+        points: 0.25
+      - match: size of 14x12 > can find the correct tile for an (uppercase|lowercase) location >.*
+        points: 0.05
+      - match: size of 14x12 > create tiles > creates all tiles while constructing grid and appends them to the DOM
+        points: 0.2
+      - match: size of 14x12 > enable/disable the grid > will keep marked tiles disabled
+        points: 0.2
+      - match: size of 14x12 > grid info > can determine the number of hits in the grid
+        points: 0.2
+      - match: size of 14x12 > .*
+        points: 0.1
+  - match: player.+
+    displayName: Player
+    defaultPoints: 0.5
+  - match: AI Player.+
+    displayName: AI Player
+    tests:
+      - match: will generate a random location for the opponents grid size
+        points: 0.5
+  - match: GameState.+
+    displayName: GameState
+    tests:
+      - match: can switch players
+        points: 0.5
+      - match: can determine that a player.*
+        points: 0.5
+      - match: on turn.*
+        points: 0.25

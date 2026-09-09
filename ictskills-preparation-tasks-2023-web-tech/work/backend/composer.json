@@ -1,0 +1,23 @@
+{
+    "name": "skills17/backend",
+    "description": "Backend task for SwissSkills 2022 - Trade 17 - Web Technologies",
+    "type": "project",
+    "license": "UNLICENSED",
+    "scripts": {
+        "start": "php -S localhost:4000 src-php/Lib/DevServer.php"
+    },
+    "authors": [
+        {
+            "name": "ICT Berufsbildung",
+            "email": "hello@skills17.ch"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Skills17\\": "src-php/"
+        }
+    },
+    "require": {
+        "phpmailer/phpmailer": "^6.6"
+    }
+}

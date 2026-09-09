@@ -1,0 +1,20 @@
+{
+    "name": "trade17-speed-challenge-task-8",
+    "version": "1.0.0",
+    "description": "ICTSkills 2022 — Trade 17 — Web Technologies",
+    "scripts": {
+        "test": "karma start",
+        "test:json": "karma start --reporters skills17-json"
+    },
+    "author": "SwissSkills",
+    "private": true,
+    "dependencies": {
+        "@skills17/karma-helpers": "^2.0.0",
+        "chai": "^4.3.6",
+        "karma": "^6.4.0",
+        "karma-chai": "^0.1.0",
+        "karma-chrome-launcher": "^3.1.1",
+        "karma-mocha": "^2.0.1",
+        "mocha": "^10.0.0"
+    }
+}

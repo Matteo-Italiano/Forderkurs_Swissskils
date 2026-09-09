@@ -1,0 +1,229 @@
+/**
+ * ICTSkills 2022 — Trade 17 — Web Technologies
+ *
+ * Speed Challenge — Task 6 — Responsive design
+ */
+
+/**
+ * General styling
+ */
+:root {
+    --white: #efefef;
+    --red: #e60000;
+    --light-gray: #cdcdcd;
+    --gray: #4a5a75;
+    --dark-gray: #2d3748;
+}
+
+html {
+    font-family: Ubuntu, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+
+.button {
+    position: relative;
+    display: inline-block;
+    padding-right: 30px;
+    color: var(--red);
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 2.0;
+    text-decoration: none;
+}
+
+.button::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    content: '';
+    border-bottom: 2px solid var(--red);
+    transition: width .3s ease-out;
+}
+
+.button::after {
+    position: absolute;
+    display: block;
+    right: 0;
+    top: 2px;
+    width: 16px;
+    content: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOCAxNyI+PHBhdGggZD0iTTEgOC41aDE2TTkuMDU0IDEgMTcgOC41IDkuMDU0IDE2IiBmaWxsPSJub25lIiBzdHJva2U9IiNlNjAwMDAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+);
+    line-height: 2.0;
+}
+
+.button:hover::before {
+    width: 100%;
+}
+
+
+
+/**
+ * Header
+ */
+header {
+    padding: 20px 0;
+    background-color: var(--dark-gray);
+    border-bottom: 1px solid var(--gray);
+}
+
+header h1 {
+    display: flex;
+    align-items: center;
+    color: var(--dark-gray);
+    letter-spacing: .025em;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+header h1 svg {
+    display: inline-block;
+    height: 30px;
+    margin-left: 10px;
+    fill: var(--red);
+}
+
+header h1 span {
+    display: inline-block;
+    color: var(--white);
+}
+
+header h1 span::first-letter {
+    color: var(--red);
+    font-weight: bold;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header ul {
+    list-style: none;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: var(--white);
+}
+
+header ul li.selected a {
+    font-weight: bold;
+}
+
+header ul li:not(.selected) {
+    display: none;
+}
+
+
+
+/**
+ * News
+ */
+.news {
+    position: relative;
+}
+
+.news img {
+    display: block;
+    object-position: center;
+    object-fit: cover;
+}
+
+.news .text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    color: var(--white);
+    z-index: 2;
+}
+
+.news .text p {
+    display: none;
+}
+
+.news .text .date {
+    display: block;
+    margin: 10px 0;
+    color: var(--light-gray);
+}
+
+
+
+/**
+ * Featured news
+ */
+.featured {
+    overflow: hidden;
+}
+
+.featured .news .text {
+    width: 100%;
+    padding: 20px 0;
+}
+
+.featured .news .text::before {
+    position: absolute;
+    top: -60px;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    content: '';
+    background: linear-gradient(0deg, var(--dark-gray) 0%, transparent 100%);
+    z-index: -1;
+}
+
+.featured .news img {
+    width: 100vw;
+    height: 60vh;
+    max-height: 500px;
+}
+
+
+
+/**
+ * Teasers
+ */
+.teasers .news {
+    margin: 20px 0;
+}
+
+.teasers .news img {
+    width: 100%;
+    height: 200px;
+    box-shadow: 0 2px 10px var(--dark-gray);
+}
+
+.teasers .news .text h2 {
+    display: inline;
+    padding: 3px 7px;
+    background-color: var(--dark-gray);
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    line-height: 1.6;
+}
+
+
+
+/**
+ * Footer
+ */
+footer {
+    margin: 20px 0;
+    text-align: center;
+}

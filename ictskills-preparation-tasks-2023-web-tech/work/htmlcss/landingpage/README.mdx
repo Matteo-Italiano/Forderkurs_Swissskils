@@ -1,0 +1,123 @@
+import { Highlight } from "@skills17/competitor-readme";
+
+# Task 2 - Building a landing page
+
+Your second task is to understand the existing resources and finish the work of creating the layout of several components that make up a landing page in pure HTML and CSS.
+
+For this task, the designer has provided you some UI designs and specifications:
+
+- Hero component
+  - [Desktop](http://localhost/work/htmlcss/landingpage/material/hero-final-desktop.jpg)
+  - [Mobile](http://localhost/work/htmlcss/landingpage/material/hero-final-mobile.jpg)
+- Facts component
+  - [Desktop](http://localhost/work/htmlcss/landingpage/material/facts-final-desktop.jpg)
+  - [Mobile](http://localhost/work/htmlcss/landingpage/material/facts-final-mobile.jpg)
+- People component
+  - [Desktop](http://localhost/work/htmlcss/landingpage/material/people-final-desktop.jpg)
+  - [Mobile](http://localhost/work/htmlcss/landingpage/material/people-final-mobile.jpg)
+- Text component
+  - [Desktop 1](http://localhost/work/htmlcss/landingpage/material/text-final-desktop-1.jpg)
+  - [Desktop 2](http://localhost/work/htmlcss/landingpage/material/text-final-desktop-2.jpg)
+  - [Mobile 1](http://localhost/work/htmlcss/landingpage/material/text-final-mobile-1.jpg)
+  - [Mobile 2](http://localhost/work/htmlcss/landingpage/material/text-final-mobile-2.jpg)
+
+## Responsive
+
+Every component should be styled mobile-first for at least two window sizes:
+
+- Mobile (up to 768px)
+- Desktop (starting at 768px)
+
+## Base Font stylings
+
+| Attribute | Style                 |
+| --------- | --------------------- |
+| Family    | Open Sans, sans-serif |
+| Size      | 16px                  |
+| Color     | #333333               |
+
+## Special Typography stylings
+
+| Element     | Style                                                                  |
+|-------------|------------------------------------------------------------------------|
+| hero h1     | size: 32px (desktop: 56px), line height: 1.25em, weight: 800           |
+| hero p      | size: 16px (desktop: 24px), line height: 1.5em                         |
+| fact span 1 | size: 56px, weight: 800, color: #E17D00                                |
+| fact span 2 | size: 24px, line height: 1.5em, weight: 800                            |
+| h2          | size: 32px, line height: 1.25em, weight: 800                           |
+| h3          | size: 20px, line height: 1.5em, weight: 800                            |
+| text p      | size: 16px, line height: 1.5em                                         |
+| text ul     | size: 16px, line height: 1.5em                                         |
+| text a      | size: 16px, weight: 600, color: #E17D00 (hover: #F0BE81), no underline |
+
+## Additional requirements
+
+**For every component:**
+
+1. The background should span the full browser's width.
+1. The content should have a maximum width of 1280px.
+1. The content should never touch the browser window's edge. There should always be a horizontal space of at least 24px.
+
+**General:**
+
+1. The `.hero` has an image that is a background image on desktop that's blurred by 4px and has a vertical gradient overlay that goes from transparent to white.
+1. The `.hero` is 100vh tall on mobile and 70vh tall on desktop.
+1. The `.hero p` has a maximum width of 1024px.
+1. The `.facts` component is stacked on mobile and horizontally aligned on desktop.
+1. The `.fact :last-child` has a maximum width of 384px.
+1. The `.people` component is scrollable on mobile with horizontal, mandatory scroll snapping that aligns at the start of every card.
+1. The `.people` component is a grid with four columns on desktop.
+1. The `.people` component has background color #FCF2E6.
+1. The `.text`'s left side has 2/5 of the width of it's parent.
+1. The `.text`'s right side has 3/5 of the width of it's parent.
+1. The unordered lists in `.text` should have the following character as bullet points: 🔸
+1. `.text a.button` should...
+<div style={{ paddingLeft: 30 }}>
+  - ...be rounded.
+  - ...have horizontal padding of 24px and vertical padding of 8px.
+  - ...have white text.
+  - ...have background and border color #E17D00.
+  - ...have a 2px solid border.
+  - ...have a 20px wide, white arrow-SVG on the right side and 8px spacing between the text and the SVG.
+  - ...have background color #F0BE81 on hover.
+</div>
+
+**All required image assets are provided in `src/assets`**
+
+## HTML and CSS files
+
+Feel free to modify and extend the **CSS** code to your needs.
+
+You can also extend the **HTML** code by adding new attributes or elements,
+but make sure you **don't delete** existing elements and attributes.
+Otherwise, the tests we will use for scoring may fail.
+
+Use the HTML and CSS files provided in the `work/htmlcss/landingpage/src` folder.
+**Do not create or modify any files outside of this directory for this task.**
+
+| Description | File                                                                                                     |
+| ----------- | -------------------------------------------------------------------------------------------------------- |
+| HTML file   | [src/task.html](http://localhost/work/htmlcss/landingpage/src/task.html) |
+| CSS file    | [src/task.css](http://localhost/work/htmlcss/landingpage/src/task.css)   |
+
+<Highlight type="error">
+  * The use of JavaScript is not allowed. <br />
+  * It must work in the provided version of Google Chrome. <br />
+  * You are not allowed to modify any files outside
+  of `work/htmlcss/landingpage/src/` in any way <br />
+</Highlight>
+
+## Scoring
+
+For scoring, we will use automated End-to-End tests to verify that the functionality works as expected.
+You can also run the same tests that we will use to verify your score.
+
+To run the tests, open a terminal and `cd` into the `work/htmlcss/landingpage` directory.
+Then, execute the following command in your terminal:
+
+- `npm run start`
+- wait for cypress to start (it might take a bit of time initially)
+- select the desired `{component}.test.js`-testsuite
+- a chrome window will open and the tests will run
+- click the "Run all tests"-Button or reload the page to rerun the test
+- select or hover over a test or assertion in the left sidebar to see the HTML at that specific point in time

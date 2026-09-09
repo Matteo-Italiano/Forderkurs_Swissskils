@@ -1,0 +1,12 @@
+# yaml-language-server: $schema=https://schema.skills17.ch/task-config/v3/config.schema.json
+id: task1
+metadata:
+  name: Array to markdown list
+  type: js
+localHistory: true
+groups:
+- match: .*
+  displayName: Array to markdown list
+  tests:
+    - match: .*
+      points: 1

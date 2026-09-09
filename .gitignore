@@ -1,0 +1,26 @@
+# OS-Metadaten (Archiv kommt von macOS)
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE-/Editor-State
+.idea/
+.vscode/
+*.iml
+*.swp
+
+# Abhängigkeiten - nie committen, sonst wird Staging unbrauchbar langsam
+node_modules/
+vendor/
+
+# Test- und Build-Artefakte
+coverage/
+.nyc_output/
+cypress/videos/
+cypress/screenshots/
+dist/
+build/
+
+# Logs
+*.log
+npm-debug.log*

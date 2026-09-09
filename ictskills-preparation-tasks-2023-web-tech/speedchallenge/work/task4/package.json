@@ -1,0 +1,17 @@
+{
+    "name": "trade17-speed-challenge-task-4",
+    "version": "1.0.0",
+    "description": "ICTSkills 2022 — Trade 17 — Web Technologies",
+    "main": "src/stringHash.js",
+    "scripts": {
+        "start": "skills17-cypress open --browser chrome",
+        "test": "skills17-cypress run --quiet --browser chrome --headless",
+        "test:json": "skills17-cypress run --quiet --browser chrome --headless --json"
+    },
+    "author": "SwissSkills",
+    "private": true,
+    "dependencies": {
+        "@skills17/cypress-helpers": "^4.0.0",
+        "cypress": "^9.7.0"
+    }
+}

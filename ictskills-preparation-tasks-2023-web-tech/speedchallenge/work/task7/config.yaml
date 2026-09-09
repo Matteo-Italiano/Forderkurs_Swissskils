@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=https://schema.skills17.ch/task-config/v3/config.schema.json
+id: task7
+metadata:
+  name: Robot dog walking distance
+  type: js
+localHistory: true
+groups:
+- match: .*
+  displayName: Robot dog walking distance
+  tests:
+    - match: (it )?stops, if it cannot reach the first charging station
+      points: 0.5
+    - match: (it )?can go for one full battery if there are no charging stations
+      points: 0.5
+    - match: .*
+      points: 1

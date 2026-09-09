@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=https://schema.skills17.ch/task-config/v3/config.schema.json
+id: task4
+metadata:
+  name: String hash
+  type: js
+localHistory: true
+groups:
+- match: .*
+  displayName: String hash
+  tests:
+    - match: .*H value.*
+      points: 1
+    - match: .*S value.*
+      points: 0.5
+    - match: .*L value.*
+      points: 0.5

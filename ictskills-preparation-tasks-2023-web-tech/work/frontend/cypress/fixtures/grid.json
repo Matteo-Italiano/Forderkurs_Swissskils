@@ -1,0 +1,72 @@
+{
+  "gridDefinitions": [
+    {
+      "height": 10,
+      "width": 10,
+      "validTiles": [
+        {
+          "name": "A1",
+          "index": 0
+        },
+        {
+          "name": "A10",
+          "index": 90
+        },
+        {
+          "name": "J1",
+          "index": 9
+        },
+        {
+          "name": "J10",
+          "index": 99
+        },
+        {
+          "name": "E5",
+          "index": 44
+        }
+      ],
+      "invalidTiles": [
+        {
+          "name": "K1"
+        },
+        {
+          "name": "A11"
+        }
+      ]
+    },
+    {
+      "height": 12,
+      "width": 14,
+      "validTiles": [
+        {
+          "name": "A1",
+          "index": 0
+        },
+        {
+          "name": "A12",
+          "index": 154
+        },
+        {
+          "name": "N1",
+          "index": 13
+        },
+        {
+          "name": "N12",
+          "index": 167
+        },
+        {
+          "name": "G6",
+          "index": 76
+        }
+      ],
+      "invalidTiles": [
+        {
+          "name": "O1"
+        },
+        {
+          "name": "A13"
+        }
+      ]
+    }
+  ]
+}

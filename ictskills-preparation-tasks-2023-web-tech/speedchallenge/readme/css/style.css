@@ -1,0 +1,259 @@
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/opensans-bold-webfont.eot');
+    src: url('../fonts/opensans-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans-bold-webfont.woff') format('woff'),
+         url('../fonts/opensans-bold-webfont.ttf') format('truetype'),
+         url('../fonts/opensans-bold-webfont.svg#open_sansbold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OpenSans';
+    src: url('../fonts/opensans-bolditalic-webfont.eot');
+    src: url('../fonts/opensans-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans-bolditalic-webfont.woff') format('woff'),
+         url('../fonts/opensans-bolditalic-webfont.ttf') format('truetype'),
+         url('../fonts/opensans-bolditalic-webfont.svg#open_sansbold_italic') format('svg');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/opensans-extrabold-webfont.eot');
+    src: url('../fonts/opensans-extrabold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans-extrabold-webfont.woff') format('woff'),
+         url('../fonts/opensans-extrabold-webfont.ttf') format('truetype'),
+         url('../fonts/opensans-extrabold-webfont.svg#open_sansextrabold') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/opensans-extrabolditalic-webfont.eot');
+    src: url('../fonts/opensans-extrabolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans-extrabolditalic-webfont.woff') format('woff'),
+         url('../fonts/opensans-extrabolditalic-webfont.ttf') format('truetype'),
+         url('../fonts/opensans-extrabolditalic-webfont.svg#open_sansextrabold_italic') format('svg');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/opensans-italic-webfont.eot');
+    src: url('../fonts/opensans-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans-italic-webfont.woff') format('woff'),
+         url('../fonts/opensans-italic-webfont.ttf') format('truetype'),
+         url('../fonts/opensans-italic-webfont.svg#open_sansitalic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/opensans-light-webfont.eot');
+    src: url('../fonts/opensans-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans-light-webfont.woff') format('woff'),
+         url('../fonts/opensans-light-webfont.ttf') format('truetype'),
+         url('../fonts/opensans-light-webfont.svg#open_sanslight') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/opensans-lightitalic-webfont.eot');
+    src: url('../fonts/opensans-lightitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans-lightitalic-webfont.woff') format('woff'),
+         url('../fonts/opensans-lightitalic-webfont.ttf') format('truetype'),
+         url('../fonts/opensans-lightitalic-webfont.svg#open_sanslight_italic') format('svg');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/opensans-regular-webfont.eot');
+    src: url('../fonts/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans-regular-webfont.woff') format('woff'),
+         url('../fonts/opensans-regular-webfont.ttf') format('truetype'),
+         url('../fonts/opensans-regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/opensans-semibold-webfont.eot');
+    src: url('../fonts/opensans-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans-semibold-webfont.woff') format('woff'),
+         url('../fonts/opensans-semibold-webfont.ttf') format('truetype'),
+         url('../fonts/opensans-semibold-webfont.svg#open_sanssemibold') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/opensans-semibolditalic-webfont.eot');
+    src: url('../fonts/opensans-semibolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans-semibolditalic-webfont.woff') format('woff'),
+         url('../fonts/opensans-semibolditalic-webfont.ttf') format('truetype'),
+         url('../fonts/opensans-semibolditalic-webfont.svg#open_sanssemibold_italic') format('svg');
+    font-weight: 500;
+    font-style: italic;
+}
+
+
+.hide {
+    display: none;
+}
+
+body {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+/* Custom container */
+.container-narrow {
+    margin: 0 auto;
+    max-width: 980px;
+}
+.container-narrow > hr {
+    margin: 10px 0;
+}
+
+/* Supporting marketing content */
+.sm-content {
+    margin: 20px 0;
+}
+.sm-content p + h4 {
+    margin-top: 28px;
+}
+.colorSchemeColorWrapper {
+    float: left;
+    width: 20%;
+}
+.colorSchemeColor {
+    width: 100%;
+    float: left;
+    height: 120px;
+}
+
+.titiliumWebDemo {
+    font-size: 2.6em;
+    font-family: 'titillium_weblight', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.marking .list-group-item:hover {
+    background-color: #f5f5f5;
+    cursor: pointer;
+}
+
+.badge-success {
+    background-color: #468847;
+}
+
+/* Color codes for part three task 2 */
+.color-code {
+    background: none;
+}
+
+
+@media all and (max-width: 1199px) {
+    .masthead .col-lg-8 {
+        padding-left: 30px;
+    }
+    .masthead .col-lg-4 {
+        padding-right: 30px;
+        float: right;
+    }
+
+}
+@media all and (max-width: 580px) {
+    .masthead .col-lg-4 { width: 120px; }
+    .masthead img {width: 100%;}
+}
+
+@media print {
+    h1 {
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+    .sm-content {
+        margin: 0;
+    }
+    .marking .badge,
+    .marking li {
+        font-size: 12px;
+    }
+}
+
+
+.no-page-break {
+    page-break-inside: avoid;
+}
+
+.speed-challenge-title {
+    padding-top: 30px;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: repeating-linear-gradient(
+        -45deg,
+        #606dbc,
+        #606dbc 10px,
+        #465298 10px,
+        #465298 20px
+        );
+    z-index: 10;
+}
+
+body {
+    padding-top: 40px;
+}
+
+h3 small .label {
+    display: inline-block;
+    transform: translateY(-5px);
+}
+
+.img-caption {
+    margin-top: 10px;
+    margin-bottom: 0;
+    color: #959595;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+ul.img-comparison li {
+    margin-bottom: 20px;
+}
+
+ul.img-comparison li h5 {
+    margin-bottom: 0;
+}
+
+/* don't hide the task titles behind the header when clicked on an anchor link */
+h3[id] {
+    padding-top: 40px;
+    margin-top: -40px;
+}
+
+.marking h3 {
+    margin-top: 0;
+}

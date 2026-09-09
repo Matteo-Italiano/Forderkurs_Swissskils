@@ -1,0 +1,132 @@
+# yaml-language-server: $schema=https://schema.skills17.ch/task-config/v3/config.schema.json
+id: backend
+metadata:
+  name: Pixel Canvas API
+serve:
+  bind: localhost
+  port: 4000
+localHistory: true
+groups:
+  - match: swiss-skills-backend(-extra)? > generic > .+
+    displayName: Generic
+    defaultPoints: 0.1
+  - match: swiss-skills-backend(-extra)? > static > .+
+    displayName: Static
+    defaultPoints: 0.05
+
+    # User
+
+    ## /api > /user > POST /
+  - match: swiss-skills-backend(-extra)? > /api > /user > POST / > validation > .+
+    displayName: POST /user > validation
+    defaultPoints: 0.1
+  - match: swiss-skills-backend(-extra)? > /api > /user > POST / > valid user creation > .+
+    displayName: POST /user > valid user creation
+    defaultPoints: 0.25
+    tests:
+        - match: valid user creation > response
+          points: 0.75
+
+    ## /api > /user > GET /verify/:token
+  - match: swiss-skills-backend(-extra)? > /api > /user > GET /verify/:token > .+
+    displayName: GET /user/verify/:token
+    defaultPoints: 0.25
+    tests:
+        - match: verify email link > creation successful
+          points: 0.5
+        - match: .+status$
+          points: 0.1
+
+    ## /api > /user > POST /signin
+  - match: swiss-skills-backend(-extra)? > /api > /user > POST /signin > validation > .+
+    displayName: POST /user/signin > validation
+    defaultPoints: 0.1
+  - match: swiss-skills-backend(-extra)? > /api > /user > POST /signin > wrong password > .+
+    displayName: POST /user/signin > wrong password
+    defaultPoints: 0.75
+    tests:
+        - match: .+status$
+          points: 0.1
+  - match: swiss-skills-backend(-extra)? > /api > /user > POST /signin > cant sign in without email verified > .+
+    displayName: POST /user/signin > cant sign in without email verified
+    defaultPoints: 0.5
+    tests:
+        - match: .+status$
+          points: 0.1
+  - match: swiss-skills-backend(-extra)? > /api > /user > POST /signin > valid sign in > .+
+    displayName: POST /user/signin > valid sign in
+    defaultPoints: 1.5
+    tests:
+        - match: .+status$
+          points: 0.1
+
+    ## /api > /user > GET /
+  - match: swiss-skills-backend(-extra)? > /api > /user > GET / > validation > .+
+    displayName: GET /user > validation
+    defaultPoints: 0.1
+  - match: swiss-skills-backend(-extra)? > /api > /user > GET / > valid get user > .+
+    displayName: GET /user > valid get user
+    defaultPoints: 0.75
+    tests:
+        - match: .+status$
+          points: 0.1
+
+
+    # Canvas
+
+    ## /api > /canvas > GET /:id
+  - match: swiss-skills-backend(-extra)? > /api > /canvas > GET /:id > validation > .+
+    displayName: GET /canvas/:id > validation
+    defaultPoints: 0.1
+  - match: swiss-skills-backend(-extra)? > /api > /canvas > GET /:id > valid get canvas > .+
+    displayName: GET /canvas/:id > valid get canvas
+    defaultPoints: 1
+    tests:
+        - match: .+status$
+          points: 0.1
+
+    ## /api > /canvas > GET /:id/changes
+  - match: swiss-skills-backend(-extra)? > /api > /canvas > GET /:id/changes > validation > .+
+    displayName: GET /canvas/:id/changes > validation
+    defaultPoints: 0.1
+  - match: swiss-skills-backend(-extra)? > /api > /canvas > GET /:id/changes > valid get changes .+
+    displayName: GET /canvas/:id/changes > valid get changes
+    defaultPoints: 2
+    tests:
+        - match: .+status$
+          points: 0.1
+
+    ## /api > /canvas > PUT /:id
+  - match: swiss-skills-backend(-extra)? > /api > /canvas > PUT /:id > validation > .+
+    displayName: PUT /canvas/:id > validation
+    defaultPoints: 0.25
+  - match: swiss-skills-backend(-extra)? > /api > /canvas > PUT /:id > not enough credits > .+
+    displayName: PUT /canvas/:id > not enough credits
+    defaultPoints: 0.75
+    tests:
+        - match: .+status$
+          points: 0.1
+  - match: swiss-skills-backend(-extra)? > /api > /canvas > PUT /:id > valid draw > .+
+    displayName: PUT /canvas/:id > valid draw
+    defaultPoints: 1.75
+    tests:
+        - match: .+status$
+          points: 0.1
+  - match: swiss-skills-backend(-extra)? > /api > /canvas > PUT /:id > check changes after draw > .+
+    displayName: PUT /canvas/:id > check changes after draw
+    defaultPoints: 1.25
+    tests:
+        - match: .+status$
+          points: 0.1
+  - match: swiss-skills-backend(-extra)? > /api > /canvas > PUT /:id > check encoded image after draw > .+
+    displayName: PUT /canvas/:id > check encoded image after draw
+    defaultPoints: 1.25
+    tests:
+        - match: check encoded image after draw > changes not yet exist
+          points: 0.25
+        - match: check encoded image after draw > drawing successful
+          points: 0.5
+        - match: check encoded image after draw > response
+          points: 2.15
+        - match: check encoded image after draw > status
+          points: 0.25

@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://schema.skills17.ch/task-config/v3/config.schema.json
+id: task3
+metadata:
+  name: Accessibility
+  type: htmlcss
+localHistory: true
+serve:
+  enabled: true
+groups:
+  - match: Accessibility.+
+    displayName: Accessibility
+    strategy: deduct
+    defaultPoints: 0.25
+    maxPoints: 1
+    tests:
+      - match: Regression Testing.*
+        required: true

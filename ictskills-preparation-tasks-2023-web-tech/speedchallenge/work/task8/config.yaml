@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=https://schema.skills17.ch/task-config/v3/config.schema.json
+id: task8
+metadata:
+  name: Regex
+  type: regex
+localHistory: true
+tests:
+- ./tests/regex-original.js
+- ./tests/scorer.js
+- ./tests/regex.test.js
+groups:
+- match: Regex.*
+  displayName: Regex
+  tests:
+    - match: Regex 1.*
+      points: 0.5
+    - match: Regex 2.*
+      points: 0.5
+    - match: Regex 3.*
+      points: 1
+    - match: Regex 4.*
+      points: 1

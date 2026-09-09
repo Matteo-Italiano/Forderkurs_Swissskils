@@ -1,0 +1,19 @@
+{
+  "id": "task5",
+  "type": "sql",
+  "localHistory": true,
+  "database": {
+    "enabled": true,
+    "name": "speedchallenge",
+    "user": "root",
+    "password": "",
+    "host": "127.0.0.1"
+  },
+  "groups": [
+    {
+      "match": "Query.*",
+      "displayName": "Queries",
+      "defaultPoints": 1.5
+    }
+  ]
+}

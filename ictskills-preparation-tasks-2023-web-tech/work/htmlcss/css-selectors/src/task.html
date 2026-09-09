@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selector</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="task.css">
+</head>
+
+<body>
+
+    <main>
+
+        <header>
+            <h1>Trash Collection</h1>
+            <p>
+                <b>Select all the things that don't belong here.</b>
+            </p>
+            <p>
+                In case you don't know what belongs in the water, I have marked it for you.
+            </p>
+            <p>
+                However, you are <strong>not allowed</strong> to use any of the following selectors
+            </p>
+            <ul>
+              <li><code>:nth-child</code></li>
+              <li><code>:nth-last-child</code></li>
+              <li><code>:nth-of-type</code></li>
+              <li><code>:nth-last-of-type</code></li>
+            </ul>
+        </header>
+
+        <article>
+            <h2>Task 0 <small>example</small></h2>
+            <section id="task-0" class="task">
+                <img class="animal" src="assets/icons/turtle.svg">
+                <img class="animal" src="assets/icons/whale.svg">
+                <img class="trash" src="assets/icons/bag.svg" data-target>
+                <img class="animal" src="assets/icons/squid.svg">
+            </section>
+        </article>
+
+        <article>
+            <h2>Task 1</h2>
+            <section id="task-1" class="task">
+                <img src="assets/icons/whale.svg">
+                <img src="assets/icons/dolphin.svg">
+                <img src="assets/icons/fish.svg">
+                <img src="assets/icons/helmet.svg" data-target>
+            </section>
+        </article>
+
+        <article>
+            <h2>Task 2</h2>
+            <section id="task-2" class="task">
+                <img class="animal" src="assets/icons/shrimp.svg">
+                <img class="trash" src="assets/icons/guitar.svg" data-target>
+                <img class="animal" src="assets/icons/squid.svg">
+                <img class="trash" src="assets/icons/bottle.svg" data-target>
+            </section>
+        </article>
+
+        <article>
+            <h2>Task 3</h2>
+            <section id="task-3" class="task">
+                <img data-trash src="assets/icons/camera.svg" data-target>
+                <img data-animal src="assets/icons/whale.svg">
+                <img data-animal src="assets/icons/dolphin.svg">
+                <img data-trash src="assets/icons/bag.svg" data-target>
+            </section>
+        </article>
+
+        <article>
+            <h2>Task 4</h2>
+            <section id="task-4" class="task">
+                <img src="assets/icons/whale.svg">
+                <div class="patch">
+                    <img src="assets/icons/camera.svg" data-target>
+                    <img src="assets/icons/dolphin.svg">
+                    <img src="assets/icons/dolphin.svg">
+                </div>
+                <img src="assets/icons/turtle.svg">
+            </section>
+        </article>
+
+        <article>
+            <h2>Task 5</h2>
+            <section id="task-5" class="task">
+                <div class="patch">
+                    <img src="assets/icons/helmet.svg" data-target>
+                    <img src="assets/icons/whale.svg">
+                    <img src="assets/icons/whale.svg">
+                </div>
+                <div class="patch">
+                    <img src="assets/icons/turtle.svg">
+                    <img src="assets/icons/dolphin.svg">
+                    <img src="assets/icons/dolphin.svg">
+                </div>
+                <span class="patch">
+                    <img src="assets/icons/trash.svg" data-target>
+                    <img src="assets/icons/whale.svg">
+                    <img src="assets/icons/whale.svg">
+                </span>
+                <div class="patch">
+                    <img src="assets/icons/fish.svg">
+                    <img src="assets/icons/whale.svg">
+                    <img src="assets/icons/whale.svg">
+                </div>
+            </section>
+        </article>
+
+        <article>
+            <h2>Task 6</h2>
+            <section id="task-6" class="task">
+                <div class="patch">
+                    <img class="pink" src="assets/icons/shrimp.svg">
+                    <img class="pink" src="assets/icons/shrimp.svg">
+                    <img class="pink" src="assets/icons/shrimp.svg">
+                </div>
+                <div class="patch">
+                    <img class="green" src="assets/icons/turtle.svg">
+                    <img class="green" src="assets/icons/turtle.svg">
+                    <img class="pink" src="assets/icons/bag.svg" data-target>
+                </div>
+                <div class="patch">
+                    <img class="pink" src="assets/icons/camera.svg" data-target>
+                    <img class="grey" src="assets/icons/dolphin.svg">
+                    <img class="blue" src="assets/icons/whale.svg">
+                </div>
+                <div class="patch">
+                    <img class="blue" src="assets/icons/whale.svg">
+                    <img class="pink" src="assets/icons/book.svg" data-target>
+                    <img class="blue" src="assets/icons/whale.svg">
+                </div>
+            </section>
+        </article>
+
+        <article>
+            <h2>Task 7</h2>
+            <section id="task-7" class="task">
+                <img class="animal-whale" src="assets/icons/whale.svg">
+                <img class="trash-camera" src="assets/icons/camera.svg" data-target>
+                <img class="animal-dolphin" src="assets/icons/dolphin.svg">
+                <img class="trash-bag" src="assets/icons/bag.svg" data-target>
+                <img class="animal-turtle" src="assets/icons/turtle.svg">
+                <img class="trash-boot" src="assets/icons/boot.svg" data-target>
+            </section>
+        </article>
+
+        <article>
+            <h2>Task 8</h2>
+            <section id="task-8" class="task">
+                <div class="patch">
+                    <img class="red" src="assets/icons/squid.svg">
+                    <img class="pink" src="assets/icons/shrimp.svg">
+                    <img class="pink" src="assets/icons/shrimp.svg">
+                </div>
+                <div class="patch">
+                    <img class="red" src="assets/icons/squid.svg">
+                    <img class="pink" src="assets/icons/shrimp.svg">
+                    <img class="pink" src="assets/icons/bag.svg" data-target>
+                </div>
+                <div class="patch">
+                    <img class="pink" src="assets/icons/shrimp.svg">
+                    <img class="pink" src="assets/icons/helmet.svg" data-target>
+                    <img class="pink" src="assets/icons/bag.svg" data-target>
+                </div>
+                <div class="patch">
+                    <img class="pink" src="assets/icons/shrimp.svg">
+                    <img class="pink" src="assets/icons/shrimp.svg">
+                    <img class="green" src="assets/icons/turtle.svg">
+                </div>
+            </section>
+        </article>
+
+        <article>
+            <h2>Task 9</h2>
+            <section id="task-9" class="task">
+                <div class="patch">
+                    <img src="assets/icons/whale.svg">
+                    <img src="assets/icons/whale.svg">
+                </div>
+                <div class="patch">
+                    <img src="assets/icons/dolphin.svg">
+                    <img src="assets/icons/dolphin.svg">
+                    <img src="assets/icons/dolphin.svg">
+                </div>
+                <div class="patch">
+                    <img src="assets/icons/bag.svg" data-target>
+                </div>
+                <div class="patch">
+                    <img src="assets/icons/camera.svg" data-target>
+                </div>
+                <div class="patch">
+                    <img src="assets/icons/turtle.svg">
+                    <img src="assets/icons/turtle.svg">
+                </div>
+                <div class="patch">
+                    <img src="assets/icons/helmet.svg" data-target>
+                </div>
+                <div class="patch">
+                    <img src="assets/icons/otter.svg">
+                    <img src="assets/icons/otter.svg">
+                    <img src="assets/icons/otter.svg">
+                </div>
+                <div class="patch">
+                    <img src="assets/icons/book.svg" data-target>
+                </div>
+            </section>
+        </article>
+
+        <article>
+            <h2>Task 10  <small>all selectors are allowed in this task</small></h2>
+            <section id="task-10" class="task">
+                <img src="assets/icons/camera.svg" data-target>
+                <img src="assets/icons/whale.svg">
+                <img src="assets/icons/guitar.svg" data-target>
+                <img src="assets/icons/boot.svg" data-target>
+                <img src="assets/icons/dolphin.svg">
+                <img src="assets/icons/bottle.svg" data-target>
+                <img src="assets/icons/trash.svg" data-target>
+                <img src="assets/icons/turtle.svg">
+                <img src="assets/icons/mic.svg" data-target>
+                <img src="assets/icons/bag.svg" data-target>
+            </section>
+        </article>
+
+    </main>
+
+</body>
+
+</html>

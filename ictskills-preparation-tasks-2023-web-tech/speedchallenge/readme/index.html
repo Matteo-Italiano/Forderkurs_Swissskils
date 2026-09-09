@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Speed Challenge - SwissSkills 2022</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SwissSkills 2022">
+    <meta name="author" content="Patrick Zahnd">
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container-narrow tasks">
+
+    <div class="row masthead">
+        <div class="col-lg-2 pull-right">
+            <img class="pull-right" src="images/logo.png" width="140" alt="">
+        </div>
+        <div class="col-lg-10">
+            <h3 class="muted speed-challenge-title">SwissSkills 2022 - Speed Challenge
+                <small>Trade 17 - Web Technologies</small>
+            </h3>
+        </div>
+    </div>
+    <div class="row">
+        <hr>
+
+        <div class="row sm-content">
+            <div class="col-lg-12">
+                <span class="label label-default pull-right"><big>Total points: 18</big></span>
+
+                <h1>Speed Challenge</h1>
+            </div>
+        </div>
+
+        <div class="row sm-content">
+            <div class="col-lg-12">
+                <h3 id="taskGeneralInformation">General information</h3>
+                <p>
+                    In the speed challenge you will prove various skills in a range of small independent tasks.
+                </p>
+                <p>
+                    You have exactly <strong>1 hour</strong> to complete as many tasks as possible.
+                    The points you score in the speed challenge will get added to your total points of the whole competition.
+                </p>
+                <p>
+                    Your solutions will be automatically marked on a central server in real-time.
+                    The first 3 competitors that complete all tasks get awarded some <b>extra points</b> (<b>3</b> points for the winner, <b>2</b> points for the second place and <b>1</b> point for the third place).
+                    If time runs out before someone was able complete all tasks, the competitors with the most points are awarded the extra points.
+                    You can also continue working on the speed challenge if other competitors are already finished as those points will still get added to your total competition points.
+                </p>
+
+                <div class="alert alert-success">
+                    All tasks can be tested by automated tests.
+                    To run them, change into their folder (e.g. <code>cd /home/student/ICTT17/speedchallenge/work/task1</code>)
+                    and execute the command stated in each task under <strong>expected result</strong>.
+                </div>
+
+                <div class="alert alert-danger">
+                    Before your start, please check that your name in <code>/home/student/ICTT17/speedchallenge/competitor.json</code> is correct.<br />
+                    If it is not, please call an expert.
+                </div>
+
+                <div class="alert alert-danger">
+                    You can only change existing files in the
+                    <code>speedchallenge/work/task<strong class="text-info">*</strong>/src/</code> folders
+                    (where <strong class="text-info">*</strong> is a number).
+                    All other files will be reverted for the review process.
+                </div>
+            </div>
+        </div>
+
+        <div class="row sm-content">
+            <div class="col-lg-12">
+                <h3 id="tasks">Tasks</h3>
+
+                The tasks do not have to be completed in the given order.
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Task</th>
+                            <th>Difficulty</th>
+                            <th>Points</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="#task1">Task 1 — Array to markdown list (JavaScript)</a></td>
+                            <td><span class="label label-success">easy</span></td>
+                            <td><strong>1</strong></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#task2">Task 2 — Rgb to hex (JavaScript)</a></td>
+                            <td><span class="label label-success">easy</span></td>
+                            <td><strong>1</strong></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#task3">Task 3 — Accessibility</a></td>
+                            <td><span class="label label-success">easy</span></td>
+                            <td><strong>1</strong></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#task4">Task 4 — String hash (JavaScript)</a></td>
+                            <td><span class="label label-warning">medium</span></td>
+                            <td><strong>2</strong></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#task5">Task 5 — SQL Queries</a></td>
+                            <td><span class="label label-danger">hard</span></td>
+                            <td><strong>3</strong></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#task6">Task 6 — Responsive Design (HTML/CSS)</a></td>
+                            <td><span class="label label-danger">hard</span></td>
+                            <td><strong>3</strong></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#task7">Task 7 — Robot dog walking distance (JavaScript)</a></td>
+                            <td><span class="label label-danger">hard</span></td>
+                            <td><strong>3</strong></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#task8">Task 8 — Regex</a></td>
+                            <td><span class="label label-danger">hard</span></td>
+                            <td><strong>3</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Task 1 -->
+        <div class="row sm-content">
+            <div class="col-lg-8">
+                <h3 id="task1">
+                    Task 1 —  Array to markdown list (JavaScript)
+                    <span class="label label-success">easy</span>
+                </h3>
+                <p>
+                    Write a JavaScript function that given an array with strings, converts it to a markdown list.
+                    Every list item should be on a new line.
+                    The order of the list entries should stay the same.
+                </p>
+                <p>
+                    For example, <code>['First', 'Second', 'Third']</code> should become:
+                    <code style="display: block; white-space: pre-line; margin-top: 12px;">* First
+                        * Second
+                        * Third
+                    </code>
+                </p>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h4 class="list-group-item-heading">Working directory</h4>
+                        <p class="list-group-item-text">
+                            Implement the empty function in: <code>speedchallenge/work/task1/src/arrayToMarkdownList.js</code>
+                        </p>
+                        <p class="list-group-item-text">
+                            You are not allowed to change any other file.
+                        </p>
+                    </li>
+                    <li class="list-group-item">
+                        <h4 class="list-group-item-heading">Expected result</h4>
+                        <p class="list-group-item-text">
+                            <code>npm test</code> runs successfully in the <code>speedchallenge/work/task1</code> folder.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 marking">
+                <h3>Marking scheme</h3>
+
+                <h4>
+                    Objective
+                    <span class="badge">1</span>
+                </h4>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <span class="badge">1</span>
+                        The <code>arrayToMarkdownList</code> function works as specified, and the tests run successfully.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Task 2 -->
+        <div class="row sm-content">
+            <div class="col-lg-8">
+                <h3 id="task2">Task 2 — Rgb to hex (JavaScript) <span class="label label-success">easy</span></h3>
+                <p>
+                    Write a JavaScript function that given a color in RGB (red, green, blue) converts it to the HEX (hexadecimal) representation of the same color.
+                    The return value should already include the leading '#' character which indicates that the color is a hexadecimal string,
+                </p>
+                <p>
+                    For example, the input RGB value <code>0, 153, 255</code> should return <code>#0099ff</code>.
+                </p>
+                <p>
+                    Run <code>npm start</code> within the task folder to open Cypress and have a visual representation of the expected and actual color.
+                </p>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h4 class="list-group-item-heading">Working directory</h4>
+                        <p class="list-group-item-text">
+                            Implement the empty function in: <code>speedchallenge/work/task2/src/rgbToHex.js</code>
+                        </p>
+                        <p class="list-group-item-text">
+                            You are not allowed to change any other file.
+                        </p>
+                    </li>
+                    <li class="list-group-item">
+                        <h4 class="list-group-item-heading">Expected result</h4>
+                        <p class="list-group-item-text">
+                            <code>npm test</code> runs successfully in the <code>speedchallenge/work/task2</code> folder.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 marking">
+                <h3>Marking scheme</h3>
+
+                <h4>
+                    Objective
+                    <span class="badge">1</span>
+                </h4>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <span class="badge">1</span>
+                        The <code>rgbToHex</code> function works as specified, and the tests run successfully.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Task 3 -->
+        <div class="row sm-content">
+            <div class="col-lg-8">
+                <h3 id="task3">
+                    Task 3 — Accessibility
+                    <span class="label label-success">easy</span>
+                </h3>
+                <p>
+                    You are given a problematic HTML / CSS page in regard to accessibility. To ensure users with
+                    impairments are able to use the page, you are to fix those violations.
+                </p>
+                <p>
+                    The page should look and behave the same as it does now. The changes you are supposed to make are
+                    all under the hood. If the page does not provide the same content and functionality as it does now, you
+                    will get 0 points. The provided regression tests will allow you to check if you've broken something.
+                </p>
+                <p>
+                    <strong>Hint:</strong> The violations and mitigations are further explained in the DevTools console
+                    (F12) when you run the tests in Chrome using Cypress.
+                </p>
+                <p>
+                    Run <code>npm start</code> within the task folder to open Cypress and see the detailed violations that have to be fixed.
+                </p>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h4 class="list-group-item-heading">Working directory</h4>
+                        <p class="list-group-item-text">
+                            Fix the violations in: <code>speedchallenge/work/task3/src/index.html</code>
+                        </p>
+                        <p class="list-group-item-text">
+                            You are not allowed to change any other file.
+                        </p>
+                    </li>
+                    <li class="list-group-item">
+                        <h4 class="list-group-item-heading">Expected result</h4>
+                        <p class="list-group-item-text">
+                            <code>npm test</code> runs successfully in the <code>speedchallenge/work/task3</code> folder.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 marking">
+                <h3>Marking scheme</h3>
+
+                <h4>
+                    Objective
+                    <span class="badge">1</span>
+                </h4>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <span class="badge">1</span>
+                        The accessibility violations of the page are fixed, there are no new violations introduced,
+                        the page still looks and behaves the same, and the tests run successfully.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Task 4 -->
+        <div class="row sm-content">
+            <div class="col-lg-8">
+                <h3 id="task4">
+                    Task 4 — String hash (JavaScript)
+                    <span class="label label-warning">medium</span>
+                </h3>
+                <p>
+                    Write a JavaScript function that calculates the hash of a string which is represented by a HSL color.
+                </p>
+                <p>
+                    The three color values should be calculated as follows:
+                    <ul>
+                        <li><code>H</code> (Hue): Modulo 360 of the sum of the UTF-16 codes of all characters</li>
+                        <li><code>S</code> (Saturation): Modulo 60 of 5 times the string length, plus 40 (so S can never be lower than 40)</li>
+                        <li><code>L</code> (Lightness): Modulo 50 of the sum of the H and S value calculated before, plus 25 (so L can never be lower than 25)</li>
+                    </ul>
+                </p>
+                <p>
+                    The color should be returned as an array of numbers in the correct order (which is <code>[h, s, l]</code>).
+                </p>
+                <p>
+                    For example, the input string <code>SwissSkills</code> should return <code>[83, 95, 53]</code>.
+                </p>
+                <p>
+                    Run <code>npm start</code> within the task folder to open Cypress and have a more examples, as well as a visual representation of the calculated color.
+                </p>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h4 class="list-group-item-heading">Working directory</h4>
+                        <p class="list-group-item-text">
+                            Implement the empty function in: <code>speedchallenge/work/task4/src/stringHash.js</code>
+                        </p>
+                        <p class="list-group-item-text">
+                            You are not allowed to change any other file.
+                        </p>
+                    </li>
+                    <li class="list-group-item">
+                        <h4 class="list-group-item-heading">Expected result</h4>
+                        <p class="list-group-item-text">
+                            <code>npm run test</code> runs successfully in the <code>speedchallenge/work/task4</code> folder.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 marking">
+                <h3>Marking scheme</h3>
+
+                <h4>
+                    Objective
+                    <span class="badge">2</span>
+                </h4>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <span class="badge">1</span>
+                        The <code>H</code> value gets calculated correctly.
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">0.5</span>
+                        The <code>S</code> value gets calculated correctly.
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">0.5</span>
+                        The <code>L</code> value gets calculated correctly.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Task 5 -->
+        <div class="row sm-content">
+            <div class="col-lg-8">
+                <h3 id="task5">
+                    Task 5 — SQL Queries
+                    <span class="label label-danger">hard</span>
+                </h3>
+                <p>
+                    You are provided a database and have to implement two queries on it.
+                </p>
+                <p>
+                    Please run <code>composer test</code> once within the task directory (<code>speedchallenge/work/task5</code>) before starting with it.
+                    This will create the database for you.
+                    You can access it with PhpMyAdmin at <a href="http://localhost/phpmyadmin">http://localhost/phpmyadmin</a> under the <code>speedchallenge</code> database.
+                </p>
+                <p>
+                    Hint: Make sure that the columns also have the correct names.
+                </p>
+                <h4>Query 1</h4>
+                <p>
+                    Return the <code>name</code> and <code>age</code> of all competitors that are participating at <code>WorldSkills 2019</code> and are <code>19 years</code> old or younger.
+                </p>
+                <p>
+                    Expected result:
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>name</th>
+                                <th>age</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Daniel Cord</td>
+                                <td>18</td>
+                            </tr>
+                            <tr>
+                                <td>Nicole Kaiser</td>
+                                <td>19</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </p>
+                <p>
+                    Save the final query in <code>speedchallenge/work/task5/src/query1.sql</code>
+                </p>
+                <h4>Query 2</h4>
+                <p>
+                    Return the <code>id</code>, <code>name</code>, and <code>date</code> of all future championships, together with the number of competitors participating in the column <code>competitors</code>.
+                </p>
+                <p>
+                    Expected result:
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>name</th>
+                                <th>date</th>
+                                <th>competitors</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2</td>
+                                <td>WorldSkills 2022</td>
+                                <td>2022-10-12</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>EuroSkills 2023</td>
+                                <td>2023-09-05</td>
+                                <td>3</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </p>
+                <p>
+                    Save the final query in <code>speedchallenge/work/task5/src/query2.sql</code>
+                </p>
+
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h4 class="list-group-item-heading">Working directory</h4>
+                        <p class="list-group-item-text">
+                            Implement the queries in: <code>speedchallenge/work/task5/src/</code>
+                        </p>
+                        <p class="list-group-item-text">
+                            You are not allowed to change any other file.
+                        </p>
+                    </li>
+                    <li class="list-group-item">
+                        <h4 class="list-group-item-heading">Expected result</h4>
+                        <p class="list-group-item-text">
+                            <code>composer test</code> runs successfully in the <code>speedchallenge/work/task5</code> folder.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 marking">
+                <h3>Marking scheme</h3>
+
+                <h4>
+                    Objective
+                    <span class="badge">3</span>
+                </h4>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <span class="badge">1.5</span>
+                        Query 1 is implemented as expected, and the test runs successfully.
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">1.5</span>
+                        Query 2 is implemented as expected, and the test runs successfully.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Task 6 -->
+        <div class="row sm-content">
+            <div class="col-lg-8">
+                <h3 id="task6">
+                    Task 6 — Responsive Design (HTML/CSS)
+                    <span class="label label-danger">hard</span>
+                </h3>
+                <p>
+                    You are given a HTML page with existing CSS. During development, the developer followed the mobile first approach.
+                </p>
+                <p>
+                    Your task is to make the design responsive and implement some changes <b>only for the desktop viewport</b> which is defined as <code>800px</code> or more.
+                    The resulting desktop page should look as in <a href="images/task6-full-desktop.png" target="_blank">this screenshot</a>.<br />
+                </p>
+                <p>
+                    The mobile version should <b>not be touched and still look as initially provided</b>.
+                    You are allowed to change the HTML, if it does not break the mobile version or the tests.
+                </p>
+                <p>
+                    Run <code>npm start</code> within the task folder to open Cypress and run the tests.
+                </p>
+                <p>
+                    Following changes have to be made on the desktop version only:
+                    <ul>
+                        <li>
+                            <h5>Header</h5>
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <img src="images/task6-header.png" alt="Task 6 - Header" class="img-responsive img-thumbnail">
+                                </div>
+                            </div>
+                            <div style="margin-top: 10px">
+                                <ol>
+                                    <li>The logo should be <code>10px</code> left of the <code>SkillNews</code> page title (not right of it)</li>
+                                    <li>In the language switch, all languages should be visible and not just the selected one</li>
+                                    <li>The languages should be horizontally aligned and have a <code>10px</code> spacing between them</li>
+                                </ol>
+                            </div>
+                        </li>
+                        <li>
+                            <h5>Featured news</h5>
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <img src="images/task6-featured.png" alt="Task 6 - Featured news" class="img-responsive img-thumbnail">
+                                </div>
+                            </div>
+                            <div style="margin-top: 10px">
+                                <ol>
+                                    <li>The preview text should be visible</li>
+                                </ol>
+                            </div>
+                        </li>
+                        <li>
+                            <h5>Teaser news</h5>
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <img src="images/task6-teasers.png" alt="Task 6 - Teaser news" class="img-responsive img-thumbnail">
+                                </div>
+                            </div>
+                            <div style="margin-top: 10px">
+                                <ol>
+                                    <li>The news should be in a 3 column grid</li>
+                                    <li>The spacing between the news should be <code>20px</code> both horizontally and vertically</li>
+                                    <li>The news title should be <code>10px</code> below the image and no longer over it</li>
+                                    <li>The news title should have the text color <code>--dark-gray</code>, no background color, and line-height <code>1.2</code></li>
+                                </ol>
+                            </div>
+                        </li>
+                    </ul>
+                </p>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h4 class="list-group-item-heading">Working directory</h4>
+                        <p class="list-group-item-text">
+                            Implement the desktop version within the existing files in: <code>speedchallenge/work/task6/src/</code>.
+                        </p>
+                        <p class="list-group-item-text">
+                            The website is available at <a href="../work/task6/src/index.html" target="_blank">speedchallenge/work/task6/src/index.html</a>.
+                        </p>
+                    </li>
+                    <li class="list-group-item">
+                        <h4 class="list-group-item-heading">Expected result</h4>
+                        <p class="list-group-item-text">
+                            The desktop version was implemented as specified, and all integration tests run successfully<br />
+                            (run <code>npm start</code> in the <code>speedchallenge/work/task6</code> folder to open Cypress and run the tests)
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 marking">
+                <h3>Marking scheme</h3>
+
+                <h4>
+                    Objective
+                    <span class="badge">3</span>
+                </h4>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <span class="badge">0.75</span>
+                        The <strong>header logo</strong> has been implemented as specified, and the tests run successfully.
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">0.75</span>
+                        The <strong>header language switch</strong> has been implemented as specified, and the tests run successfully.
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">0.5</span>
+                        The <strong>featured news</strong> section has been implemented as specified, and the tests run successfully.
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">1</span>
+                        The <strong>teaser news</strong> section has been implemented as specified, and the tests run successfully.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Task 7 -->
+        <div class="row sm-content">
+            <div class="col-lg-8">
+                <h3 id="task7">Task 7 — Robot dog walking distance (JavaScript) <span class="label label-danger">hard</span></h3>
+                <p>
+                    Robot dogs only have battery capacity to walk a certain number of meters.
+                    However, at each charging stations that is on their way, they fill their battery back up to 100%.
+                </p>
+                <p>
+                    Robot dogs always start with a full battery.
+                </p>
+                <p>
+                    Your task is to implement a function that calculates how far a robot dog can walk in meters
+                    with his battery capacity and the provided charging stations.
+                </p>
+                <p>
+                    For example, given a robot dog with a capacity of <code>7</code> and charging stations at <code>[4, 9, 21, 30]</code>, it can walk <code>16</code> meters.
+                </p>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h4 class="list-group-item-heading">Working directory</h4>
+                        <p class="list-group-item-text">
+                            Implement the empty function in: <code>speedchallenge/work/task7/src/walk.js</code>
+                        </p>
+                        <p class="list-group-item-text">
+                            You are not allowed to change any other file.
+                        </p>
+                    </li>
+                    <li class="list-group-item">
+                        <h4 class="list-group-item-heading">Expected result</h4>
+                        <p class="list-group-item-text">
+                            <code>npm test</code> runs successfully in the <code>speedchallenge/work/task7</code> folder.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 marking">
+                <h3>Marking scheme</h3>
+
+                <h4>
+                    Objective
+                    <span class="badge">3</span>
+                </h4>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <span class="badge">0.5</span>
+                        It stops, if it cannot reach the first charging station.
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">1</span>
+                        It stops, if it cannot reach the next charging station.
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">1</span>
+                        It continues for a full battery after reaching the last charging station.
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">0.5</span>
+                        It can go for one full battery if there are no charging stations.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Task 8 -->
+        <div class="row sm-content">
+            <div class="col-lg-8">
+                <h3 id="task8">
+                    Task 8 — Regex
+                    <span class="label label-danger">hard</span>
+                </h3>
+                <p>
+                    You are given some strings that should match and some that shouldn't.
+                    Write the correct regex patterns to complete this task.
+                </p>
+                <p>
+                    Every regex pattern has a character limit, but you may find solutions that are shorter than the given maximum length.
+                    Also, it is not expected that you figure out a general solution or validate the inputs (e.g. for valid dates).
+                    As long as your regex passes the tests, it will be accepted.
+                </p>
+                <p>
+                    At the top of your work file, there is a pre-solved example with a more detailed explanation.
+                </p>
+                <p>
+                    You can test if your regex patterns are correct by running the <code>npm test</code> command within the task folder.
+                    Above the <code>------------       RESULT       ------------</code> section, you will have more information why a test failed and which strings the regex matched and which not.
+                </p>
+                <p>
+                    A <a href="../material/regex/regular-expressions-cheat-sheet.pdf" target="_blank">Regex Cheat Sheet</a> in provided in your material folder.
+                </p>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h4 class="list-group-item-heading">Working directory</h4>
+                        <p class="list-group-item-text">
+                            Implement the regex patterns in: <code>speedchallenge/work/task8/src/regex.js</code>
+                        </p>
+                        <p class="list-group-item-text">
+                            You are not allowed to change any other file.
+                        </p>
+                    </li>
+                    <li class="list-group-item">
+                        <h4 class="list-group-item-heading">Expected result</h4>
+                        <p class="list-group-item-text">
+                            <code>npm test</code> runs successfully in the <code>speedchallenge/work/task8</code> folder.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 marking">
+                <h3>Marking scheme</h3>
+
+                <h4>
+                    Objective
+                    <span class="badge">3</span>
+                </h4>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <span class="badge">0.5</span>
+                        Regex #1 <code>Hexadecimal strings</code> is passing on the tests page.
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">0.5</span>
+                        Regex #2 <code>Islands</code> is passing on the tests page.
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">1</span>
+                        Regex #3 <code>Markdown links</code> is passing on the tests page.
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">1</span>
+                        Regex #4 <code>Formatted swiss phone numbers</code> is passing on the tests page.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <p>SwissSkills 2022 - Trade 17 - Web Technologies &copy; swiss skills 2022</p>
+            </div>
+        </div>
+
+    </div>
+    <!-- /container -->
+
+    <!-- Le javascript
+	================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/swisscompetition.js"></script>
+</body>
+
+</html>

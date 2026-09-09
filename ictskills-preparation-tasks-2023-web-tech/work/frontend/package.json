@@ -1,0 +1,24 @@
+{
+    "name": "frontend",
+    "version": "1.0.0",
+    "description": "Frontend task for SwissSkills 2022 — Trade 17 — Web Technologies",
+    "main": "index.js",
+    "directories": {
+        "lib": "lib"
+    },
+    "scripts": {
+        "start": "skills17-cypress open --browser chrome",
+        "test": "skills17-cypress run --browser chrome --headless",
+        "test:json": "skills17-cypress run --quiet --browser chrome --headless --json"
+    },
+    "keywords": [],
+    "author": "ICT Berufsbildung",
+    "license": "ISC",
+    "dependencies": {
+        "@skills17/cypress-helpers": "^4.0.1",
+        "chai": "^4.3.6",
+        "cypress": "^9.7.0",
+        "mocha": "^10.0.0",
+        "sinon": "^14.0.0"
+    }
+}

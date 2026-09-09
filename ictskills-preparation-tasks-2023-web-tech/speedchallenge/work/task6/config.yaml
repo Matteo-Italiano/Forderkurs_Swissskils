@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=https://schema.skills17.ch/task-config/v3/config.schema.json
+id: task6
+metadata:
+  name: SkillNews
+  type: htmlcss
+localHistory: true
+groups:
+- match: .*
+  displayName: SkillNews
+  tests:
+    - match: Header.*
+      points: 0.75
+    - match: Featured.*
+      points: 0.5
+    - match: Teaser.*
+      points: 1

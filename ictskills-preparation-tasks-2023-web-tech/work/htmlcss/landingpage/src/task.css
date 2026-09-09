@@ -1,0 +1,137 @@
+/**
+ * SwissSkills 2022 — Trade 17 — Web Technologies
+ *
+ * HTML/CSS — Task 2 — Landing Page
+ */
+
+ * {
+    margin: 0;
+    padding: 0;
+}
+
+
+/**
+ * @TODO HERO COMPONENT
+ * -----
+ * Here, you should add all the styles
+ * required to make the hero component
+ * look as expected in the screenshots.
+ *
+ * Feel free to add more CSS-blocks with
+ * other selectors to make sure you
+ * can style everything you need.
+ */
+
+.hero {
+    /* ... */
+}
+
+/**
+ * END OF HERO COMPONENT
+ */
+
+
+/**
+ * @TODO FACTS COMPONENT
+ * -----
+ * Here, you should add all the styles
+ * required to make the facts component
+ * look as expected in the screenshots.
+ *
+ * Feel free to add more CSS-blocks with
+ * other selectors to make sure you
+ * can style everything you need.
+ */
+
+.facts {
+    /* ... */
+}
+
+/**
+ * END OF FACTS COMPONENT
+ */
+
+
+/**
+ * @TODO PEOPLE COMPONENT
+ * -----
+ * Here, you should add all the styles required
+ * to make the people component look as
+ * expected in the screenshots.
+ *
+ * This time we have provided you with some
+ * styles already so you can focus
+ * on the important stuff.
+ *
+ * Feel free to add more CSS-blocks with
+ * other selectors to make sure you
+ * can style everything you need.
+ */
+
+.people {
+    /* ... */
+}
+
+.people a.card {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -2px;
+    transition: all 300ms ease;
+}
+.people a.card:hover {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px;
+}
+
+.people a.card img {
+    max-width: 20rem;
+    width: 70vw;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+.people a.card p {
+    font-size: 1.25rem;
+    line-height: 1.5em;
+    font-weight: 800;
+    padding-top: 0.75rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+
+    .people a.card img {
+        width: 100%;
+        height: 18rem;
+        aspect-ratio: unset;
+    }
+
+}
+
+/**
+ * END OF PEOPLE COMPONENT
+ */
+
+
+/**
+ * @TODO TEXT COMPONENT
+ * -----
+ * Here, you should add all the styles
+ * required to make the text component
+ * look as expected in the screenshots.
+ *
+ * Feel free to add more CSS-blocks with
+ * other selectors to make sure you
+ * can style everything you need.
+ */
+
+.text {
+    /* ... */
+}
+
+/**
+ * END OF TEXT COMPONENT
+ */
