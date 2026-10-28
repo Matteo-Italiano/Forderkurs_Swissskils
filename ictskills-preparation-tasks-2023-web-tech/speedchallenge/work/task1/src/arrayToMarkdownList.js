@@ -20,5 +20,5 @@
  * @return {String}
  */
 const arrayToMarkdownList = (array) => {
-    return 'TODO';
+    return array.map((item) => `* ${item}`).join('\n');
 }

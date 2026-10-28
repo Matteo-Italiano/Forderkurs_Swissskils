@@ -20,7 +20,8 @@
  * @return {string}
  */
 const rgbToHex = (r, g, b) => {
-  return '#todo';
+  const toHex = (value) => value.toString(16).padStart(2, '0');
+  return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
 }
 
 export default rgbToHex;
