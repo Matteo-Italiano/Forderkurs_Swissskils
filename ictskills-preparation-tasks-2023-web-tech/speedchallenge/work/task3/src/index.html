@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="english">
+<html lang="en">
 <head>
     <meta charset="utf-8">
+    <title>Praesent Tincidunt</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="styles.css" rel="stylesheet">
     <meta name="theme-color" content="#712cf9">
-    <meta http-equiv="refresh" content="3600">
 </head>
 <body>
 
@@ -13,7 +13,7 @@
     <header class="pb-3 mb-4 border-bottom">
         <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
 
-            <svg style="width: 30px" class="me-2" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+            <svg style="width: 30px" class="me-2" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                  viewBox="0 0 242.937 242.937"
                  xml:space="preserve">
                 <g>
@@ -37,60 +37,63 @@
         </a>
     </header>
 
-    <div class="mb-4 bg-light rounded-3 position-relative overflow-hidden" style="min-height: 400px">
-        <img src="images/news.jpg" style="position: absolute; width: 100%;">
-        <div class="p-5" style="position: absolute; top: 0;">
-            <div class="container-fluid py-5">
-                <h1 class="display-5 fw-bold text-white">Proin at efficitur enim</h1>
-                <p class="col-md-10 fs-4 text-white">Aliquam tristique libero non finibus facilisis. Morbi et dolor mollis,
-                    fringilla erat hendrerit, luctus felis. Nullam auctor erat velit, sed efficitur nibh blandit
-                    vitae. Maecenas ac convallis elit.</p>
-                <button class="btn btn-primary btn-lg" type="button">Maecenas Mattis</button>
+    <main>
+        <div class="mb-4 bg-light rounded-3 position-relative overflow-hidden" style="min-height: 400px">
+            <img src="images/news.jpg" alt="" style="position: absolute; width: 100%;">
+            <div class="p-5" style="position: absolute; top: 0;">
+                <div class="container-fluid py-5">
+                    <h1 class="display-5 fw-bold text-white">Proin at efficitur enim</h1>
+                    <p class="col-md-10 fs-4 text-white">Aliquam tristique libero non finibus facilisis. Morbi et dolor mollis,
+                        fringilla erat hendrerit, luctus felis. Nullam auctor erat velit, sed efficitur nibh blandit
+                        vitae. Maecenas ac convallis elit.</p>
+                    <button class="btn btn-primary btn-lg" type="button">Maecenas Mattis</button>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="row align-items-md-stretch">
-        <div class="col-md-6">
-            <div class="h-100 p-5 text-bg-dark rounded-3">
-                <h2>Cras Vulputate</h2>
-                <p>Pellentesque quam nisi, egestas rutrum neque eu, rutrum tincidunt lacus. Vestibulum enim sapien,
-                    facilisis sit amet nulla non, rhoncus molestie magna. Maecenas mattis odio eu est pulvinar, sit
-                    amet tempus ex porta. Morbi sollicitudin pretium orci, non malesuada magna elementum ut.</p>
-                <button class="btn btn-outline-light" type="button">Discere Plus</button>
+        <div class="row align-items-md-stretch">
+            <div class="col-md-6">
+                <div class="h-100 p-5 text-bg-dark rounded-3">
+                    <h2>Cras Vulputate</h2>
+                    <p>Pellentesque quam nisi, egestas rutrum neque eu, rutrum tincidunt lacus. Vestibulum enim sapien,
+                        facilisis sit amet nulla non, rhoncus molestie magna. Maecenas mattis odio eu est pulvinar, sit
+                        amet tempus ex porta. Morbi sollicitudin pretium orci, non malesuada magna elementum ut.</p>
+                    <button class="btn btn-outline-light" type="button">Discere Plus</button>
+                </div>
             </div>
-        </div>
-        <div class="col-md-6">
-            <div class="h-100 p-5 bg-light border rounded-3">
-                <h2>Phasellus Facilisis</h2>
-                <form class="needs-validation" novalidate="">
-                    <div class="row g-3">
-                        <div class="col-12">
-                            <label id="name" class="form-label">Name</label>
-                            <div class="input-group has-validation">
-                                <input type="text" class="form-control" id="name" required="">
+            <div class="col-md-6">
+                <div class="h-100 p-5 bg-light border rounded-3">
+                    <h2>Phasellus Facilisis</h2>
+                    <form class="needs-validation" novalidate="">
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <label for="name" class="form-label">Name</label>
+                                <div class="input-group has-validation">
+                                    <input type="text" class="form-control" id="name" required="">
+                                    <div class="invalid-feedback">
+                                        Nomen tuum desideratur.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email">
                                 <div class="invalid-feedback">
-                                    Nomen tuum desideratur.
+                                    Enter inscriptionem electronicam validam.
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-12">
-                            <label id="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email">
-                            <div class="invalid-feedback">
-                                Enter inscriptionem electronicam validam.
-                            </div>
-                        </div>
-                    </div>
+                        <hr class="my-4">
 
-                    <hr class="my-4">
-
-                    <button class="w-100 btn btn-primary btn-lg" type="submit">Subscribere Sursum</button>
-                </form>
+                        <button class="w-100 btn btn-primary btn-lg" type="submit">Subscribere Sursum</button>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
+
+    </main>
 
     <footer class="pt-3 mt-4 text-muted border-top">
         &copy; 2022
