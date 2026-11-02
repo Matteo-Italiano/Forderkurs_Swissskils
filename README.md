@@ -22,10 +22,10 @@ und unsere Lösungen dazu.
 | **Hauptmodule** | | | |
 | A | Landing Page | HTML/CSS | ⬜ offen |
 | B | CSS Selectors | HTML/CSS | ⬜ offen |
-| C | Battleship | Frontend / Vanilla JS | ⬜ offen |
+| C | Battleship | Frontend / Vanilla JS | ✅ gelöst |
 | D | Pixel Canvas API | Backend (Node **oder** PHP) | ⬜ offen |
 
-**3 von 12** Tasks sind durch. Die Speed Challenge ist der schnellste Weg zu Übung,
+**4 von 12** Tasks sind durch. Die Speed Challenge ist der schnellste Weg zu Übung,
 die vier Hauptmodule sind das, was am Wettkampf wirklich zählt.
 
 ---
@@ -66,6 +66,37 @@ der Linktext daneben sagt bereits dasselbe.
 > Geprüft mit axe-core gegen die Seite: vorher 6 Violations, nachher 0.
 > Die offizielle Cypress-Suite konnte lokal nicht laufen (kein Chrome installiert).
 
+### Hauptmodul C — Battleship
+`work/frontend/src/` — `util.js`, `grid.js`, `player.js`, `ai-player.js`, `game-state.js`
+
+Battleship gegen eine KI, komplett in Vanilla JS. Alle 24 TODOs sind weg, ausserhalb
+von `src/` wurde nichts angefasst.
+
+| Datei | Was drin steckt |
+|---|---|
+| `util.js` | Schachnotation ↔ Koordinaten. Format `^[A-Za-z]\d+$`, danach erst die Bounds — die Reihenfolge entscheidet, welcher Error fliegt. |
+| `grid.js` | Baut Legende + Tiles ins DOM, findet/markiert Tiles, zählt Treffer. |
+| `player.js` | Schiffe über `ShipGenerator.generateShips()` und ab damit ins Grid. |
+| `ai-player.js` | Würfelt eine Zelle im **gegnerischen** Grid, würfelt neu solange schon markiert, klickt nach 250 ms. |
+| `game-state.js` | Zugwechsel, Siegprüfung, Dialog. |
+
+Drei Dinge, die nicht offensichtlich waren:
+
+- **Die Tile-Reihenfolge im DOM ist die Bewertung.** Die Tests holen sich `querySelectorAll('button')[index]`
+  und vergleichen mit `findTile()`. Also müssen die Tiles zeilenweise (`y` aussen, `x` innen) angelegt werden,
+  sonst stimmt kein einziger Index.
+- **Das Grid-Layout macht CSS allein** — aber nur, wenn die Legende *vor* den Tiles ins DOM kommt.
+  `base.css` nutzt `grid-auto-flow: dense`; kommen die Tiles zuerst, fressen sie die Legendenspalte auf.
+  Gesetzt wird lediglich `repeat(width + 1, 1fr)` / `repeat(height + 1, 1fr)` — das `+1` ist die Legende.
+- **`setPlayers` deaktiviert das eigene Grid** und aktiviert das des Gegners. Klingt verkehrt herum,
+  ist aber richtig: geklickt wird immer beim Gegner.
+
+> Verifiziert mit einer nachgebauten Testsuite (56 Assertions, gespiegelt aus den fünf Cypress-Specs,
+> gegen jsdom) sowie Layout- und Vollspiel-Durchläufen im echten Headless-Chrome:
+> Tracks stimmen (11×11 bzw. 15×13), jede Legende und jedes Tile sitzt in der richtigen Zelle,
+> und drei komplette Partien enden sauber mit "Player wins!" / "AI wins!".
+> Die offizielle Cypress-Suite selbst lief lokal nicht (kein Linux-Chrome im WSL).
+
 ---
 
 ## ⬜ Was noch offen ist
@@ -81,7 +112,6 @@ der Linktext daneben sagt bereits dasselbe.
 ### Hauptmodule
 
 - **Landing Page** & **CSS Selectors** (`work/htmlcss/`) · noch komplett im Startzustand.
-- **Battleship** (`work/frontend/`) · ~24 `TODO`s verteilt über `grid.js`, `game-state.js`, `util.js`, `player.js`, `ai-player.js`. Das grösste Einzelstück im Repo.
 - **Pixel Canvas API** (`work/backend/`) · wahlweise Node (`src-node/`) oder PHP (`src-php/`). Statische Files werden noch nicht ausgeliefert, die Routen fehlen.
 
 ---

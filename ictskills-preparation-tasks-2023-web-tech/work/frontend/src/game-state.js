@@ -21,7 +21,10 @@ export class GameState {
      * @param {Player} player2 the second player
      */
     setPlayers(player1, player2) {
-        // TODO
+        this.currentPlayer = player1;
+        this.opponent = player2;
+
+        this.updateGrids();
     }
 
     /**
@@ -29,7 +32,21 @@ export class GameState {
      * Enable/Disable the correct grids.
      */
     switchPlayers() {
-        // TODO
+        [this.currentPlayer, this.opponent] = [
+            this.opponent,
+            this.currentPlayer,
+        ];
+
+        this.updateGrids();
+    }
+
+    /**
+     * Only the opponents grid can be shot at, so the current players own grid
+     * is disabled while the opponents grid is enabled.
+     */
+    updateGrids() {
+        this.currentPlayer.grid.disable();
+        this.opponent.grid.enable();
     }
 
     /**
@@ -43,7 +60,18 @@ export class GameState {
      * @param {string} location the chess notation style location - eg. A1, B5, ...
      */
     onTurn(location) {
-        // TODO
+        this.opponent.grid.markTile(location);
+
+        if (this.checkWin()) {
+            this.openWinningDialog();
+            return;
+        }
+
+        this.switchPlayers();
+
+        if (this.currentPlayer instanceof AIPlayer) {
+            this.currentPlayer.playTurn();
+        }
     }
 
     /**
@@ -52,7 +80,10 @@ export class GameState {
      * @returns {boolean}
      */
     checkWin() {
-        // TODO
+        return (
+            this.opponent.grid.getNumberOfHits() ===
+            this.opponent.getNumberOfShipTiles()
+        );
     }
 
     /**
@@ -62,7 +93,10 @@ export class GameState {
      * - "Player wins!"
      */
     openWinningDialog() {
-        // TODO
+        this.dialog.innerText =
+            this.currentPlayer instanceof AIPlayer ? "AI wins!" : "Player wins!";
+
+        this.dialog.showModal();
     }
 }
 

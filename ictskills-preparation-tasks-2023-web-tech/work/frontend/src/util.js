@@ -1,6 +1,15 @@
 import { InvalidTileFormatError, TileOutOfBoundsError } from "../lib/errors.js";
 
 /**
+ * A valid location consists of exactly one letter (the x-axis) followed by
+ * at least one digit (the y-axis) - eg. A1, B5, Z99, ...
+ */
+const LOCATION_FORMAT = /^[A-Za-z]\d+$/;
+
+/** char code of the letter `A` - the first column of every grid */
+const FIRST_COLUMN_CHAR_CODE = "A".charCodeAt(0);
+
+/**
  * Validate a location.
  *
  * If the location has an incorrect format:
@@ -17,7 +26,17 @@ import { InvalidTileFormatError, TileOutOfBoundsError } from "../lib/errors.js";
  * @returns {boolean}
  */
 export const validateLocation = (location, maxWidth, maxHeight) => {
-    // TODO
+    if (typeof location !== "string" || !LOCATION_FORMAT.test(location)) {
+        throw new InvalidTileFormatError(location);
+    }
+
+    const { x, y } = locationToCoordinates(location);
+
+    if (x < 0 || y < 0 || x >= maxWidth || y >= maxHeight) {
+        throw new TileOutOfBoundsError(location);
+    }
+
+    return true;
 };
 
 /**
@@ -34,7 +53,13 @@ export const validateLocation = (location, maxWidth, maxHeight) => {
  * @returns {{x: number, y: number}}
  */
 export const locationToCoordinates = (location) => {
-    // TODO
+    const column = location.slice(0, 1).toUpperCase();
+    const row = location.slice(1);
+
+    return {
+        x: column.charCodeAt(0) - FIRST_COLUMN_CHAR_CODE,
+        y: parseInt(row, 10) - 1,
+    };
 };
 
 /**
@@ -50,9 +75,8 @@ export const locationToCoordinates = (location) => {
  * @param {number} y the y coordinate
  * @returns {string}
  */
-export const coordinatesToLocation = (x, y) => {
-    // TODO
-};
+export const coordinatesToLocation = (x, y) =>
+    `${String.fromCharCode(FIRST_COLUMN_CHAR_CODE + x)}${y + 1}`;
 
 /**
  * Generate a random chess notation style location which fits into the bounds provided.
@@ -61,9 +85,11 @@ export const coordinatesToLocation = (x, y) => {
  * @param {number} maxHeight the maximum size of the y-axis
  * @returns {string}
  */
-export const generateLocation = (maxWidth, maxHeight) => {
-    // TODO
-};
+export const generateLocation = (maxWidth, maxHeight) =>
+    coordinatesToLocation(
+        Math.floor(Math.random() * maxWidth),
+        Math.floor(Math.random() * maxHeight)
+    );
 
 /**
  * Move a location along the x/y axis.
@@ -79,5 +105,7 @@ export const generateLocation = (maxWidth, maxHeight) => {
  * @returns {string}
  */
 export const moveLocation = (location, dx = 0, dy = 0) => {
-    // TODO
+    const { x, y } = locationToCoordinates(location);
+
+    return coordinatesToLocation(x + dx, y + dy);
 };

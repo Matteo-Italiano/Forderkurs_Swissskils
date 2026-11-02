@@ -1,4 +1,4 @@
-import { validateLocation } from "./util.js";
+import { coordinatesToLocation, validateLocation } from "./util.js";
 
 export class Grid {
     /**
@@ -17,16 +17,24 @@ export class Grid {
      * @param {number} height height of the grid
      */
     constructor(element, width, height) {
-        // TODO
-
         /** @type {HTMLElement} */
-        this.element;
+        this.element = element;
 
         /** @type {number} */
-        this.width;
+        this.width = width;
 
         /** @type {number} */
-        this.height;
+        this.height = height;
+
+        /** @type {HTMLButtonElement[]} */
+        this.tiles = [];
+
+        // one extra column/row for the legend
+        this.element.style.gridTemplateColumns = `repeat(${width + 1}, 1fr)`;
+        this.element.style.gridTemplateRows = `repeat(${height + 1}, 1fr)`;
+
+        this.createLegend();
+        this.createTiles();
     }
 
     /**
@@ -44,7 +52,34 @@ export class Grid {
      *       if all classes are assigned correctly
      */
     createLegend() {
-        // TODO
+        for (let x = 0; x < this.width; x++) {
+            // the x-axis is labelled with the column letter - A, B, C, ...
+            this.element.appendChild(
+                this.createSingleLegend("x", coordinatesToLocation(x, 0).slice(0, 1))
+            );
+        }
+
+        for (let y = 0; y < this.height; y++) {
+            // the y-axis is labelled with the row number - 1, 2, 3, ...
+            this.element.appendChild(this.createSingleLegend("y", `${y + 1}`));
+        }
+    }
+
+    /**
+     * Create a single legend element for one of the two axes.
+     *
+     * @param {'x'|'y'} axis the axis this legend belongs to
+     * @param {string} label the character (x-axis) or number (y-axis) to display
+     * @returns {HTMLSpanElement} the legend element that was created
+     */
+    createSingleLegend(axis, label) {
+        const legend = document.createElement("span");
+
+        legend.textContent = label;
+        legend.classList.add("grid-legend", `grid-legend-${axis}-axis`);
+        legend.dataset.legend = axis;
+
+        return legend;
     }
 
     /**
@@ -60,7 +95,15 @@ export class Grid {
      *       if all classes are assigned correctly
      */
     createTiles() {
-        // TODO
+        // row by row, so the DOM order matches the visual order of the grid
+        for (let y = 0; y < this.height; y++) {
+            for (let x = 0; x < this.width; x++) {
+                const tile = this.createSingleTile(coordinatesToLocation(x, y));
+
+                this.tiles.push(tile);
+                this.element.appendChild(tile);
+            }
+        }
     }
 
     /**
@@ -75,7 +118,13 @@ export class Grid {
      * @returns {HTMLButtonElement} the tile that was created
      */
     createSingleTile(location) {
-        // TODO
+        const tile = document.createElement("button");
+
+        tile.type = "button";
+        tile.dataset.tile = "";
+        tile.dataset.location = location;
+
+        return tile;
     }
 
     /**
@@ -92,21 +141,31 @@ export class Grid {
      * @return {HTMLButtonElement}
      */
     findTile(location) {
-        // TODO
+        const normalized =
+            typeof location === "string" ? location.toUpperCase() : location;
+
+        // throws an InvalidTileFormatError or a TileOutOfBoundsError if invalid
+        validateLocation(normalized, this.width, this.height);
+
+        return this.tiles.find((tile) => tile.dataset.location === normalized);
     }
 
     /**
      * Disable all tiles in the grid.
      */
     disable() {
-        // TODO
+        this.tiles.forEach((tile) => {
+            tile.disabled = true;
+        });
     }
 
     /**
      * Enable all tiles in the grid expect the ones that have already been marked.
      */
     enable() {
-        // TODO
+        this.tiles.forEach((tile) => {
+            tile.disabled = tile.hasAttribute("data-marked");
+        });
     }
 
     /**
@@ -119,7 +178,10 @@ export class Grid {
      * @param {string} location the chess notation style location of this tile - eg. A1, B5, ...
      */
     markTile(location) {
-        // TODO
+        const tile = this.findTile(location);
+
+        tile.dataset.marked = "";
+        tile.disabled = true;
     }
 
     /**
@@ -129,7 +191,7 @@ export class Grid {
      * @param {string} location the chess notation style location of this tile - eg. A1, B5, ...
      */
     placeShipOnTile(location) {
-        // TODO
+        this.findTile(location).dataset.ship = "";
     }
 
     /**
@@ -139,7 +201,7 @@ export class Grid {
      * @returns {boolean}
      */
     hasBeenMarked(location) {
-        // TODO
+        return this.findTile(location).hasAttribute("data-marked");
     }
 
     /**
@@ -148,6 +210,10 @@ export class Grid {
      * @returns {number}
      */
     getNumberOfHits() {
-        // TODO
+        return this.tiles.filter(
+            (tile) =>
+                tile.hasAttribute("data-ship") &&
+                tile.hasAttribute("data-marked")
+        ).length;
     }
 }

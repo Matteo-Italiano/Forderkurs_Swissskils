@@ -12,13 +12,15 @@ export class Player {
      * @param {Grid} grid
      */
     constructor(grid) {
-        // TODO
-
         /** @type {Grid} */
-        this.grid;
+        this.grid = grid;
 
         /** @type {Array<string[]>} */
-        this.ships;
+        this.ships = ShipGenerator.generateShips(grid.width, grid.height);
+
+        this.ships.forEach((ship) =>
+            ship.forEach((location) => this.grid.placeShipOnTile(location))
+        );
     }
 
     /**
@@ -27,6 +29,6 @@ export class Player {
      * @returns {number}
      */
     getNumberOfShipTiles() {
-        // TODO
+        return this.ships.reduce((total, ship) => total + ship.length, 0);
     }
 }
